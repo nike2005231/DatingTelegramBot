@@ -1,0 +1,210 @@
+table 1 name = "user" прям с кавычками название
+id_user primary_key - он вроде как хватает чат айди пользователя любой 
+link_profile varchar(100) тут ссылка на профиль человека в виде @profile_1
+name varchar(50) имя 
+gender varchar(50) пол либо "женский" либо "мужской"
+age integer возраст
+city varchar(50) Город
+
+table 2 name = profile
+id_profile primary_key - тут просто по порядку числа
+id_user foreign key понятно
+photo varchar(250) фото пользователя в 16 битном формате записанно как текст
+purpose varchar(50) либо "общение" либо "дружба" либо "отношения"
+discription text описания к анкете 
+gender_search varchar(50) либо "мужчин" либо "женщин"
+
+
+CREATE TABLE viewed_profiles(
+    id_viewed_profiles BIGSERIAL PRIMARY KEY,
+    mu_user_id BIGINT NOT NULL,
+    profile_id BIGINT NOT NULL
+);
+
+create table like_profiles(
+	like_profiles_id bigserial primary key,
+	my_chat_id bigint not null,
+	like_user bigint not null
+)
+
+
+INSERT INTO "user" (id_user, link_profile, name, gender, age, city) VALUES
+
+мужики ищут мужчин
+(1, '@dmitry_hawk', 'Дмитрий', 'мужской', 35, 'Москва, 55.755826, 37.617300'),
+(2, '@alexey_rider', 'Алексей', 'мужской', 28, 'Санкт-Петербург, 59.934280, 30.335099'),
+(3, '@sergey_star', 'Сергей', 'мужской', 40, 'Екатеринбург, 56.838926, 60.605703'),
+(4, '@nick_wolf', 'Николай', 'мужской', 32, 'Санкт-Петербург, 59.934280, 30.335099'),
+(5, '@igor_blaze', 'Игорь', 'мужской', 25, 'Москва, 55.755826, 37.617300'),
+(6, '@vlad_maverick', 'Владимир', 'мужской', 45, 'Новосибирск, 55.008353, 82.935733'),
+(7, '@victor_edge', 'Виктор', 'мужской', 29, 'Казань, 55.830431, 49.066081'),
+(8, '@eugene_spark', 'Евгений', 'мужской', 38, 'Нижний Новгород, 56.326887, 44.005986'),
+(9, '@andrew_flash', 'Андрей', 'мужской', 22, 'Челябинск, 55.164441, 61.436843'),
+(10, '@yuri_strong', 'Юрий', 'мужской', 48, 'Самара, 53.195878, 50.100202'),
+(11, '@gen_gale', 'Геннадий', 'мужской', 34, 'Омск, 54.989342, 73.368212'),
+(12, '@roman_jolt', 'Роман', 'мужской', 27, 'Ростов-на-Дону, 47.235713, 39.701505'),
+(13, '@mike_thunder', 'Михаил', 'мужской', 41, 'Уфа, 54.734853, 55.957864'),
+(14, '@stan_fire', 'Станислав', 'мужской', 30, 'Красноярск, 56.015301, 92.893247'),
+(15, '@val_light', 'Валентин', 'мужской', 20, 'Пермь, 58.010450, 56.229434'),
+(16, '@konstantin_wave', 'Константин', 'мужской', 50, 'Краснодар, 45.035470, 38.975313'),
+(17, '@anton_strike', 'Антон', 'мужской', 26, 'Тюмень, 57.153033, 65.534328'),
+(18, '@max_blitz', 'Максим', 'мужской', 36, 'Волгоград, 48.708048, 44.513303'),
+(19, '@art_lightning', 'Артем', 'мужской', 21, 'Тольятти, 53.508342, 49.419975'),
+(20, '@paul_raven', 'Павел', 'мужской', 42, 'Воронеж, 51.660781, 39.200269'),
+
+мужики ищут женщин
+(21, '@leonid_falcon', 'Леонид', 'мужской', 44, 'Саратов, 51.533557, 46.034257'),
+(22, '@oleg_sky', 'Олег', 'мужской', 19, 'Волгоград, 48.708048, 44.513303'),
+(23, '@vadim_hero', 'Вадим', 'мужской', 31, 'Тюмень, 57.153033, 65.534328'),
+(24, '@fedor_steel', 'Федор', 'мужской', 37, 'Владивосток, 43.115536, 131.885485'),
+(25, '@anatoly_blade', 'Анатолий', 'мужской', 26, 'Ярославль, 57.626559, 39.893812'),
+(26, '@ilya_ace', 'Илья', 'мужской', 22, 'Челябинск, 55.164441, 61.436843'),
+(27, '@george_knight', 'Георгий', 'мужской', 48, 'Казань, 55.830431, 49.066081'),
+(28, '@denis_rock', 'Денис', 'мужской', 35, 'Томск, 56.484703, 84.948173'),
+(29, '@grigory_storm', 'Григорий', 'мужской', 41, 'Калининград, 54.710426, 20.452214'),
+(30, '@vasily_raptor', 'Василий', 'мужской', 23, 'Сочи, 43.602807, 39.734154'),
+(31, '@eduard_shadow', 'Эдуард', 'мужской', 27, 'Тверь, 56.859625, 35.911889'),
+(32, '@yaroslav_legend', 'Ярослав', 'мужской', 45, 'Ижевск, 56.852676, 53.204477'),
+(33, '@kirill_hero', 'Кирилл', 'мужской', 34, 'Махачкала, 42.983060, 47.504682'),
+(34, '@vyacheslav_dragon', 'Вячеслав', 'мужской', 29, 'Барнаул, 53.354779, 83.769783'),
+(35, '@boris_titan', 'Борис', 'мужской', 20, 'Белгород, 50.599713, 36.598263'),
+(36, '@semyon_quest', 'Семен', 'мужской', 39, 'Брянск, 53.252090, 34.371670'),
+(37, '@arkady_flash', 'Аркадий', 'мужской', 38, 'Пенза, 53.194546, 45.019529'),
+(38, '@gleb_power', 'Глеб', 'мужской', 32, 'Ульяновск, 54.317349, 48.402368'),
+(39, '@nikita_blaze', 'Никита', 'мужской', 24, 'Ростов-на-Дону, 47.235713, 39.701505'),
+(40, '@rustam_eagle', 'Рустам', 'мужской', 28, 'Пермь, 58.010450, 56.229434')
+
+женщины которые ищут женщин
+(41, '@anna_dream', 'Анна', 'женский', 30, 'Москва, 55.755826, 37.617300'),
+(42, '@olga_star', 'Ольга', 'женский', 25, 'Санкт-Петербург, 59.934280, 30.335099'),
+(43, '@elena_moon', 'Елена', 'женский', 35, 'Екатеринбург, 56.838926, 60.605703'),
+(44, '@maria_sun', 'Мария', 'женский', 28, 'Санкт-Петербург, 59.934280, 30.335099'),
+(45, '@natalia_rose', 'Наталья', 'женский', 32, 'Новосибирск, 55.008353, 82.935733'),
+(46, '@tatiana_love', 'Татьяна', 'женский', 29, 'Казань, 55.830431, 49.066081'),
+(47, '@svetlana_jade', 'Светлана', 'женский', 27, 'Нижний Новгород, 56.326887, 44.005986'),
+(48, '@irina_glow', 'Ирина', 'женский', 38, 'Челябинск, 55.164441, 61.436843'),
+(49, '@ekaterina_frost', 'Екатерина', 'женский', 26, 'Самара, 53.195878, 50.100202'),
+(50, '@alisa_fire', 'Алиса', 'женский', 31, 'Омск, 54.989342, 73.368212'),
+(51, '@valeria_spark', 'Валерия', 'женский', 24, 'Ростов-на-Дону, 47.235713, 39.701505'),
+(52, '@victoria_blossom', 'Виктория', 'женский', 29, 'Уфа, 54.734853, 55.957864'),
+(53, '@darya_pearl', 'Дарья', 'женский', 33, 'Красноярск, 56.015301, 92.893247'),
+(54, '@yana_gem', 'Яна', 'женский', 22, 'Пермь, 58.010450, 56.229434'),
+(55, '@sofia_wave', 'София', 'женский', 36, 'Краснодар, 45.035470, 38.975313'),
+(56, '@alena_jewel', 'Алена', 'женский', 34, 'Тюмень, 57.153033, 65.534328'),
+(57, '@kira_lotus', 'Кира', 'женский', 28, 'Волгоград, 48.708048, 44.513303'),
+(58, '@evgenia_rose', 'Евгения', 'женский', 40, 'Тольятти, 53.508342, 49.419975'),
+(59, '@nadezhda_dawn', 'Надежда', 'женский', 35, 'Воронеж, 51.660781, 39.200269'),
+(60, '@lyudmila_glory', 'Людмила', 'женский', 32, 'Москва, 55.755826, 37.617300')
+
+женщины которые ищут мужчин
+(61, '@veronica_star', 'Вероника', 'женский', 31, 'Москва, 55.755826, 37.617300'),
+(62, '@zoya_moon', 'Зоя', 'женский', 27, 'Санкт-Петербург, 59.934280, 30.335099'),
+(63, '@diana_glow', 'Диана', 'женский', 25, 'Екатеринбург, 56.838926, 60.605703'),
+(64, '@anastasia_sun', 'Анастасия', 'женский', 34, 'Казань, 55.830431, 49.066081'),
+(65, '@julia_blossom', 'Юлия', 'женский', 22, 'Новосибирск, 55.008353, 82.935733'),
+(66, '@svetlana_jewel', 'Светлана', 'женский', 38, 'Санкт-Петербург, 59.934280, 30.335099'),
+(67, '@olga_gem', 'Ольга', 'женский', 29, 'Нижний Новгород, 56.326887, 44.005986'),
+(68, '@irina_wave', 'Ирина', 'женский', 30, 'Самара, 53.195878, 50.100202'),
+(69, '@ekaterina_frost', 'Екатерина', 'женский', 36, 'Челябинск, 55.164441, 61.436843'),
+(70, '@tatiana_pearl', 'Татьяна', 'женский', 28, 'Уфа, 54.734853, 55.957864'),
+(71, '@maria_fire', 'Мария', 'женский', 24, 'Ростов-на-Дону, 47.235713, 39.701505'),
+(72, '@valeria_glory', 'Валерия', 'женский', 35, 'Красноярск, 56.015301, 92.893247'),
+(73, '@evgenia_dawn', 'Евгения', 'женский', 33, 'Пермь, 58.010450, 56.229434'),
+(74, '@sofia_light', 'София', 'женский', 32, 'Краснодар, 45.035470, 38.975313'),
+(75, '@alena_star', 'Алена', 'женский', 31, 'Тюмень, 57.153033, 65.534328'),
+(76, '@yana_spark', 'Яна', 'женский', 29, 'Волгоград, 48.708048, 44.513303'),
+(77, '@darya_lotus', 'Дарья', 'женский', 26, 'Тольятти, 53.508342, 49.419975'),
+(78, '@anastasia_rose', 'Анастасия', 'женский', 27, 'Воронеж, 51.660781, 39.200269'),
+(79, '@lyudmila_blossom', 'Людмила', 'женский', 34, 'Тюмень, 57.153033, 65.534328'),
+(80, '@irina_jade', 'Ирина', 'женский', 30, 'Москва, 55.755826, 37.617300')
+
+
+INSERT INTO profile (id_profile, id_user, photo, purpose, discription, gender_search) VALUES
+
+мужики ищут мужчин
+(1, 1, 'AgACAgIAAxkBAAI_PWZcWCyuaSzgeD0JJCtMc1IU6m1FAAKH3jEblLPoShHX6y7EqZ-OAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 1', 'мужчин'),
+(2, 2, 'AgACAgIAAxkBAAI_PmZcWDIaeOGKMWsa90jc17G7jAEVAAKI3jEblLPoShoahmL4NP57AQADAgADeQADNQQ', 'общение', 'Описание анкеты 2', 'мужчин'),
+(3, 3, 'AgACAgIAAxkBAAI_P2ZcWDQTUxU20rea5PXh0-CMpxKPAAKJ3jEblLPoSiTkApLu5NmSAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 3', 'мужчин'),
+(4, 4, 'AgACAgIAAxkBAAI_QGZcWDZ5Sn0Ix2hNODoVEElfBJOCAAKK3jEblLPoSvFAT9vsVg2JAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 4', 'мужчин'),
+(5, 5, 'AgACAgIAAxkBAAI_QWZcWDn8druOrDYEJCLam3yncBk_AAKL3jEblLPoStJ-M7Z2UxEyAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 5', 'мужчин'),
+(6, 6, 'AgACAgIAAxkBAAI_QmZcWDug3PGA5ib7Ny6rbwL1kaI7AAKM3jEblLPoSmdEttTMZeN8AQADAgADeQADNQQ', 'общение', 'Описание анкеты 6', 'мужчин'),
+(7, 7, 'AgACAgIAAxkBAAI_Q2ZcWD3kbxCWDFOFpMUiUJyHgLXMAAKN3jEblLPoSnH1mkg4_TRKAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 7', 'мужчин'),
+(8, 8, 'AgACAgIAAxkBAAI_RGZcWD-lf5yVm28O2Ntn6YEvqG1BAAKO3jEblLPoSgERCVE93GGPAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 8', 'мужчин'),
+(9, 9, 'AgACAgIAAxkBAAI_RWZcWEHwIk4wfnrtbBvgPUoNGEl_AAKP3jEblLPoSid7ItmRIIA2AQADAgADeQADNQQ', 'общение', 'Описание анкеты 9', 'мужчин'),
+(10, 10, 'AgACAgIAAxkBAAI_RmZcWEPIHU86BdGzTI9Id7zjhT8iAAKQ3jEblLPoSghL7buoCKHoAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 10', 'мужчин'),
+(11, 11, 'AgACAgIAAxkBAAI_R2ZcWEdLy9e30KmRNM1uRbi9kLt5AAKR3jEblLPoSiB2LGscB8etAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 11', 'мужчин'),
+(12, 12, 'AgACAgIAAxkBAAI_SGZcWErJEEIWWTTbpOKbYVpqd_NlAAKS3jEblLPoSssKNpHMxvz4AQADAgADeQADNQQ', 'отношения', 'Описание анкеты 12', 'мужчин'),
+(13, 13, 'AgACAgIAAxkBAAI_SWZcWEwe3Q6NDOjmOAwga8ypnmvBAAKT3jEblLPoSv1IW0FDAQ2fAQADAgADeQADNQQ', 'общение', 'Описание анкеты 13', 'мужчин'),
+(14, 14, 'AgACAgIAAxkBAAI_SmZcWE52atU9W6qsSaOJtpLHuZ5yAAKU3jEblLPoShm6V3uT6nQMAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 14', 'мужчин'),
+(15, 15, 'AgACAgIAAxkBAAI_S2ZcWFGVVcG8Esithhmt1WQs4FAWAAKV3jEblLPoShCa6f5Yk42FAQADAgADeQADNQQ', 'общение', 'Описание анкеты 15', 'мужчин'),
+(16, 16, 'AgACAgIAAxkBAAI_TGZcWFOHgrXF-gbUp0DkPW0M2MJYAAKW3jEblLPoSq9QmGS7OIARAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 16', 'мужчин'),
+(17, 17, 'AgACAgIAAxkBAAI_TWZcWFWAOB1NxmwIW214Nvlo_eliAAKX3jEblLPoSkVp304ejRG1AQADAgADeQADNQQ', 'отношения', 'Описание анкеты 17', 'мужчин'),
+(18, 18, 'AgACAgIAAxkBAAI_TmZcWFetfq6Giq7k0SWipoh_7OjOAAKY3jEblLPoSoplSeajJYOhAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 18', 'мужчин'),
+(19, 19, 'AgACAgIAAxkBAAI_T2ZcWFneMzZTGf7pa2CgOWV1pijsAAKZ3jEblLPoSlrWGUZNBhmSAQADAgADeQADNQQ', 'общение', 'Описание анкеты 19', 'мужчин'),
+(20, 20, 'AgACAgIAAxkBAAI_UGZcWFtRxFveOIfcEENyJSQqDFB0AAKa3jEblLPoSu5UBhF6fDqxAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 20', 'мужчин');
+
+Мужчины ищут женщин
+(21, 21, 'AgACAgIAAxkBAAI_UWZcWF8FYXKmB5NjOYKfG_t5HownAAKb3jEblLPoSp7JGZnnUhz-AQADAgADeQADNQQ', 'общение', 'Описание анкеты 21', 'женщин'),
+(22, 22, 'AgACAgIAAxkBAAI_UmZcWGKVAAHCdAzmZFOZvcGFaQdisQACnN4xG5Sz6ErizhSaPdMdMwEAAwIAA3kAAzUE', 'отношения', 'Описание анкеты 22', 'женщин'),
+(23, 23, 'AgACAgIAAxkBAAI_U2ZcWGQw7G8uu9rH-Dv0qeoTaMyKAAKd3jEblLPoSncp2ZoGE8hIAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 23', 'женщин'),
+(24, 24, 'AgACAgIAAxkBAAI_VGZcWGY-jHm9m5wg3_ZBfuc7KSyxAAKe3jEblLPoSsekHuqlQ_42AQADAgADeAADNQQ', 'отношения', 'Описание анкеты 24', 'женщин'),
+(25, 25, 'AgACAgIAAxkBAAI_VWZcWGkShNCl3kq2DkxbVJC-bvRnAAKf3jEblLPoSsNrSYi5TTbuAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 25', 'женщин'),
+(26, 26, 'AgACAgIAAxkBAAI_VmZcWGz3yO2RRCtRpGQBCLOQ7uXFAAKg3jEblLPoSkHHLDFrRHISAQADAgADeQADNQQ', 'общение', 'Описание анкеты 26', 'женщин'),
+(27, 27, 'AgACAgIAAxkBAAI_V2ZcWG8pTIfAIufsRFmmyZBm1QqrAAKi3jEblLPoSt_FLx3nxuRBAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 27', 'женщин'),
+(28, 28, 'AgACAgIAAxkBAAI_WGZcWHHYbyOWZia2Vk-pYuzDImssAAKj3jEblLPoShCNmhAQDgT_AQADAgADeQADNQQ', 'дружба', 'Описание анкеты 28', 'женщин'),
+(29, 29, 'AgACAgIAAxkBAAI_WWZcWHSWzphnb6Damq15rvnid_pEAAKl3jEblLPoSqblxSK31Ym8AQADAgADeQADNQQ', 'общение', 'Описание анкеты 29', 'женщин'),
+(30, 30, 'AgACAgIAAxkBAAI_WmZcWHavVSGv3mCajKNjtMHoh1_rAAKm3jEblLPoSsN3h5nfWfirAQADAgADeAADNQQ', 'отношения', 'Описание анкеты 30', 'женщин'),
+(31, 31, 'AgACAgIAAxkBAAI_W2ZcWHm0RUXh9OEU2_jdeCBTKLscAAKn3jEblLPoSlX-VHmsvKZrAQADAgADeQADNQQ', 'общение', 'Описание анкеты 31', 'женщин'),
+(32, 32, 'AgACAgIAAxkBAAI_XGZcWHv5jnQwzEm7gjODudEaudFyAAKo3jEblLPoSlVQ_SbYXEY4AQADAgADeQADNQQ', 'дружба', 'Описание анкеты 32', 'женщин'),
+(33, 33, 'AgACAgIAAxkBAAI_XWZcWH4LAwn5YPQfZfDw2WdH6YMDAAKp3jEblLPoSlmK0ijdMTeHAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 33', 'женщин'),
+(34, 34, 'AgACAgIAAxkBAAI_XmZcWIBj80iEdJ7AXYHXIPg4fOdyAAKq3jEblLPoShmN2q-VU-e5AQADAgADeQADNQQ', 'дружба', 'Описание анкеты 34', 'женщин'),
+(35, 35, 'AgACAgIAAxkBAAI_X2ZcWIXOQRxl-eZuerUHBRSyX73_AAKr3jEblLPoSob7kCKZTZ5vAQADAgADeQADNQQ', 'общение', 'Описание анкеты 35', 'женщин'),
+(36, 36, 'AgACAgIAAxkBAAI_YGZcWIeuiaQHAR3Ox8l_YGRJsnZLAAKs3jEblLPoShZYTz1i8rpnAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 36', 'женщин'),
+(37, 37, 'AgACAgIAAxkBAAI_YWZcWIo_b4vqSm77B5FA18EIVBtTAAKt3jEblLPoSpt2RkeIBximAQADAgADeQADNQQ', 'общение', 'Описание анкеты 37', 'женщин'),
+(38, 38, 'AgACAgIAAxkBAAI_YmZcWI1_glWQOLdph-jaGVaIwIMHAAKu3jEblLPoSjzYfHfFkYuDAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 38', 'женщин'),
+(39, 39, 'AgACAgIAAxkBAAI_Y2ZcWI-X68ypYYNeaWlGX9ItfXVCAAKv3jEblLPoSl267s4IGHRrAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 39', 'женщин'),
+(40, 40, 'AgACAgIAAxkBAAI_ZGZcWJH36Q0DloVUWqGpkukC2fdSAAKw3jEblLPoSlRiohBZgd_4AQADAgADeQADNQQ', 'общение', 'Описание анкеты 40', 'женщин');
+
+Женщины женщин
+(41, 41, 'AgACAgIAAxkBAAI-6mZcVUUDn1MXitsSdCZnPCqSVvFxAAJW3jEblLPoSuFRpoPffn2gAQADAgADeQADNQQ', 'общение', 'Описание анкеты 41', 'женщин'),
+(42, 42, 'AgACAgIAAxkBAAI-62ZcVWkCoh2NfvUeC76V63WiSLD8AAJX3jEblLPoSonv4kJqB1ImAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 42', 'женщин'),
+(43, 43, 'AgACAgIAAxkBAAI-7GZcVW7I8ZrxM1aRI3pfnzK_bt7BAAJc3jEblLPoSvJECP5qQ0OrAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 43', 'женщин'),
+(44, 44, 'AgACAgIAAxkBAAI-7WZcVXFbew0Sw6o19NIOt6_N8Nq3AAJd3jEblLPoShjchi5_JYMlAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 44', 'женщин'),
+(45, 45, 'AgACAgIAAxkBAAI-7mZcVXOG5Qiuqo_wf3-CB-oQvg4jAAJe3jEblLPoSqd7x1fACWZXAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 45', 'женщин'),
+(46, 46, 'AgACAgIAAxkBAAI-72ZcVXapvscl91qhu0vPvv1yrG1EAAJf3jEblLPoSgeGmrwTi3BbAQADAgADeQADNQQ', 'общение', 'Описание анкеты 46', 'женщин'),
+(47, 47, 'AgACAgIAAxkBAAI-8GZcVXj-IRnNnGdqgUapE2ZjKGWVAAJg3jEblLPoSn7E1Px8jH7wAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 47', 'женщин'),
+(48, 48, 'AgACAgIAAxkBAAI-8WZcVXy9Yeum39P5zib59RybgODmAAJh3jEblLPoSp5P7Pa-hqfsAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 48', 'женщин'),
+(49, 49, 'AgACAgIAAxkBAAI-8mZcVX7grUaqfCSWiYbJUDyCa62gAAJj3jEblLPoSjXx61XbgRDdAQADAgADeQADNQQ', 'общение', 'Описание анкеты 49', 'женщин'),
+(50, 50, 'AgACAgIAAxkBAAI-82ZcVYEAARePuZu4BOafXMf7-PNQ4QACZN4xG5Sz6EpDcNfDdEJRiwEAAwIAA3gAAzUE', 'отношения', 'Описание анкеты 50', 'женщин'),
+(51, 51, 'AgACAgIAAxkBAAI-9GZcVYS4yLaUmiBbZNNwqk24GCRGAAJl3jEblLPoSr2cxXaIuU3jAQADAgADeQADNQQ', 'общение', 'Описание анкеты 51', 'женщин'),
+(52, 52, 'AgACAgIAAxkBAAI-9WZcVYeb6Ow_EyrWhjOyG04weNhQAAJm3jEblLPoSkk1VHOgQyskAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 52', 'женщин'),
+(53, 53, 'AgACAgIAAxkBAAI-9mZcVYqOXFAoQyJspbYE4CJDW11YAAJn3jEblLPoSjVEAxsqn52iAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 53', 'женщин'),
+(54, 54, 'AgACAgIAAxkBAAI-92ZcVYx69_NflMDuP4oMKhTWhe4EAAJo3jEblLPoSitrH2S_7cd4AQADAgADeQADNQQ', 'дружба', 'Описание анкеты 54', 'женщин'),
+(55, 55, 'AgACAgIAAxkBAAI--GZcVY_GNj4IbeLl_YmWtZ2SDBt8AAJp3jEblLPoSqw8b8yaAg4vAQADAgADeQADNQQ', 'общение', 'Описание анкеты 55', 'женщин'),
+(56, 56, 'AgACAgIAAxkBAAI--WZcVZJk9nC850PuFxas7g1pkJj4AAJq3jEblLPoSlJnAAE6k8kVVgEAAwIAA3kAAzUE', 'отношения', 'Описание анкеты 56', 'женщин'),
+(57, 57, 'AgACAgIAAxkBAAI--mZcVZULrPZadmiVQ5uDxA3rdNRVAAJt3jEblLPoSsvMOUV879H2AQADAgADeQADNQQ', 'общение', 'Описание анкеты 57', 'женщин'),
+(58, 58, 'AgACAgIAAxkBAAI--2ZcVZnLpiOfy5NdmMD8IbW-1Iq0AAJu3jEblLPoSumvFoS1SjwJAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 58', 'женщин'),
+(59, 59, 'AgACAgIAAxkBAAI-_GZcVZybnZDTEaFy0aXLKNFxMZ9xAAJv3jEblLPoSvLIFvYUcTQHAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 59', 'женщин'),
+(60, 60, 'AgACAgIAAxkBAAI-_WZcVZ4UXM_hRofJmW7EcrKJIadWAAJw3jEblLPoSsviD2A49bgIAQADAgADeQADNQQ', 'общение', 'Описание анкеты 60', 'женщин');
+
+Женщины Мужчин
+(61, 61, 'AgACAgIAAxkBAAI-_mZcVaK3fO7ObGRKWH9zVf7oY-m4AAJx3jEblLPoSs0MGmfFRJm_AQADAgADeQADNQQ', 'общение', 'Описание анкеты 61', 'мужчин'),
+(62, 62, 'AgACAgIAAxkBAAI-_2ZcVaV-c2mC6TUULA46eldDviVWAAJy3jEblLPoSsauGSH6r_kuAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 62', 'мужчин'),
+(63, 63, 'AgACAgIAAxkBAAI_AAFmXFWojQbnqlPJ6kjK7tV_xnbktQACc94xG5Sz6EqhuznCjbz1mwEAAwIAA3kAAzUE', 'дружба', 'Описание анкеты 63', 'мужчин'),
+(64, 64, 'AgACAgIAAxkBAAI_AWZcVaqEd7XMnqTPEOg9gYbnQQZCAAJ03jEblLPoSvFeFRTTuwfQAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 64', 'мужчин'),
+(65, 65, 'AgACAgIAAxkBAAI_AmZcVa4X4bvvVRi6skODeuatQrHYAAJ13jEblLPoSnIYFGe-ZyOQAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 65', 'мужчин'),
+(66, 66, 'AgACAgIAAxkBAAI_A2ZcVbHxkc1Di4OBXU1DdWd4fZ7RAAJ23jEblLPoStTBiMY-OncQAQADAgADeAADNQQ', 'общение', 'Описание анкеты 66', 'мужчин'),
+(67, 67, 'AgACAgIAAxkBAAI_BGZcVbRBGs2dpBJekztfEjaGVWzAAAJ33jEblLPoSliBxOcVbssvAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 67', 'мужчин'),
+(68, 68, 'AgACAgIAAxkBAAI_BWZcVbfntPWxykH9NnV1HUJ2hqi5AAJ43jEblLPoSlQv1TCfqdpkAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 68', 'мужчин'),
+(69, 69, 'AgACAgIAAxkBAAI_BmZcVbnkoazo3SpMec4MEppQwgrzAAJ53jEblLPoSmGqzyySmxJnAQADAgADeQADNQQ', 'общение', 'Описание анкеты 69', 'мужчин'),
+(70, 70, 'AgACAgIAAxkBAAI_B2ZcVbsuxZ4tKyABNr65i4d4A0qSAAJ63jEblLPoSikUP9fRZAABBQEAAwIAA3kAAzUE', 'отношения', 'Описание анкеты 70', 'мужчин'),
+(71, 71, 'AgACAgIAAxkBAAI_CGZcVb4Js8SKEgmwvoEDO0YrhR7BAAJ73jEblLPoSlTOiDIPKL9YAQADAgADeQADNQQ', 'общение', 'Описание анкеты 71', 'мужчин'),
+(72, 72, 'AgACAgIAAxkBAAI_CWZcVcIxu2HHtf0208f-GDq1Xs6nAAJ83jEblLPoSocB9-RAYglIAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 72', 'мужчин'),
+(73, 73, 'AgACAgIAAxkBAAI_CmZcVcXalZj3htFRwvpeR8g091RNAAJ93jEblLPoSptUuhKRayNuAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 73', 'мужчин'),
+(74, 74, 'AgACAgIAAxkBAAI_C2ZcVci7FRsKtyCVkGnu85XR--IuAAJ-3jEblLPoSjaAwVu3XPTEAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 74', 'мужчин'),
+(75, 75, 'AgACAgIAAxkBAAI_DGZcVc0HPJZ3wxFih9TNcvAiAAEYJwACf94xG5Sz6Ep8ATvlvoDRdQEAAwIAA3kAAzUE', 'общение', 'Описание анкеты 75', 'мужчин'),
+(76, 76, 'AgACAgIAAxkBAAI_DWZcVdDKZvNaiMljgGtSuBGIiYZkAAKA3jEblLPoSnVHGIUEimdTAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 76', 'мужчин'),
+(77, 77, 'AgACAgIAAxkBAAI_DmZcVdLfaUj2LZuaf5kMPFcXdDwCAAKB3jEblLPoSgfXOBOBlvS2AQADAgADeQADNQQ', 'общение', 'Описание анкеты 77', 'мужчин'),
+(78, 78, 'AgACAgIAAxkBAAI_D2ZcVdTA2YY6Erx-AWn6L-K3NLypAAKC3jEblLPoShTmlGYoxt3DAQADAgADeQADNQQ', 'дружба', 'Описание анкеты 78', 'мужчин'),
+(79, 79, 'AgACAgIAAxkBAAI_EGZcVdeLrH6SR7a_XXAQwvJxP2HGAAKD3jEblLPoSpRzyRX34YYlAQADAgADeQADNQQ', 'отношения', 'Описание анкеты 79', 'мужчин'),
+(80, 80, 'AgACAgIAAxkBAAI_KWZcV9qSu3QXLBvotDQEb-WMtJFpAAKF3jEblLPoSpiAKHDFwCS7AQADAgADeQADNQQ', 'общение', 'Описание анкеты 80', 'мужчин');
